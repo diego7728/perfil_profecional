@@ -67,3 +67,79 @@ console.log("division = " + divi.toFixed(2));
 // modulo
 var modulo = number_one % number_two;
 console.log("modulo = " + modulo);
+
+// OPERADORES LOGICOS Y ESTRUCTURAS CONDICIONALES (INVERSE, INCREMENTO Y DECREMENTO)
+// AND && con if - ampersand
+var bool = false;
+var numeric = 10;
+if(!bool && numeric == "10"){ // bool == true
+    console.log("ENTRA IF");
+}
+else{
+    console.log("ENTRA ELSE");
+}
+
+if (!bool || numeric == 7){
+    console.log("ENTRA IF");
+    numeric+=3;
+}
+else {
+    console.log("ENTRA ELSE");
+    numeric--;
+}
+console.log(numeric);
+
+// FOR 
+for(let j = 0; j<arrays_text.length; j++){
+    console.log(arrays_text[j] + (j+1));
+}
+
+//WHILE 
+let f=0;
+while(f<arrays_text.length){
+    console.log(arrays_text[f] + (f+1));
+    f++;
+}
+
+// DO WHILE
+let m = 0;
+do{
+    console.log(arrays_text[m] + (m+1));
+    m++;
+}while(m<arrays_text.length)
+
+// funciones y eventos
+function load_page(){
+    alert("la pagina se a cargado correctamente")
+}
+
+function change_color(){
+    document.body.style.backgroundColor = "red";
+    document.body.style.color = "#fff";
+}
+
+const clear_color = document.querySelector("#clear_color");
+clear_color.addEventListener("dblclick", () => {
+    document.body.style.backgroundColor = "#fff";
+    document.body.style.color = "#000";
+});
+
+// registro formularios
+const form_register = document.getElementById("form_register")
+const nombres = document.getElementById("nombres")
+const apellidos = document.getElementById("apellidos")
+const information = document.getElementById("information")
+
+form_register.addEventListener("submit", name_event => {
+    name_event.preventDefault();
+    let info ="";
+    console.log(nombres.value.length);
+    if(nombres.value.length <= 2 || apellidos.value.length <=2){
+        info +="nombres y apellidos invalidos";
+        information.style.color = "red";
+    }
+    else{
+        alert(nombres.value + " " + apellidos.value);
+    }
+    information.innerText = info;
+})
