@@ -49,7 +49,7 @@ var arrays_mul = [
     {name:"samuel", last_name:"duarte", age:"21"},
     {name:"luis", last_name:"martinez", age:"3"},
     {name:"jose", last_name:"", age:"8"}
-]
+];
 
 // ############# operadores basicos
 // suma
@@ -110,7 +110,21 @@ do{
 
 // funciones y eventos
 function load_page(){
-    alert("la pagina se a cargado correctamente")
+    document.getElementById("nombres").focus();
+    document.getElementById("apellidos").disabled = true;
+    for(let j=0;j<arrays_mul.length;j++){
+        console.log(arrays_mul[j].name);
+    }
+}
+
+function validate(){
+    let nombres = document.getElementById("nombres");
+    if(nombres.value.length > 2){
+        nombres.style.border = "2px solid green"
+        let apellidos = document.getElementById("apellidos").disabled = false;
+        document.getElementById("apellidos").focus();
+        document.getElementById("nombres").value = "";
+    }
 }
 
 function change_color(){
